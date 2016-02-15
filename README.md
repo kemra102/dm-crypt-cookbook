@@ -68,7 +68,7 @@ If you would like to contribute to this cookbook please follow these steps;
 
 ## License and Authors
 
-License: [BSD 2 Clause](https://tldrlegal.com/license/bsd-2-clause-license-\(freebsd\)
+License: [BSD 2 Clause](https://tldrlegal.com/license/bsd-2-clause-license-\(freebsd\))
 
 Authors:
 
