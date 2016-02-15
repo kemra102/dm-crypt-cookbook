@@ -1,0 +1,31 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: true
+
+platforms:
+  - name: centos-7
+    driver_config:
+      run_command: /usr/sbin/init
+      privileged: true
+  - name: ubuntu-14.04
+    driver_config:
+      privileged: true
+  - name: ubuntu-12.04
+    driver_config:
+      privileged: true
+  - name: debian-8
+    driver_config:
+      privileged: true
+  - name: debian-7
+    driver_config:
+      privileged: true
+
+suites:
+  - name: default
+    run_list:
+      - recipe[test::default]
+    attributes:
