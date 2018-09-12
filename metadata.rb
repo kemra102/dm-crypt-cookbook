@@ -11,8 +11,8 @@ chef_version '>= 12.5' if respond_to?(:chef_version)
 %w[centos oracle redhat scientific].each do |os|
   supports os, '>= 7.0'
 end
-supports 'ubuntu', '>= 12.04'
-supports 'debian', '>= 7.0'
+supports 'ubuntu', '>= 14.04'
+supports 'debian', '>= 8.0'
 
 source_url 'https://github.com/kemra102/dm-crypt-cookbook' if
   respond_to?(:source_url)
