@@ -11,9 +11,6 @@ platforms:
     driver_config:
       run_command: /usr/sbin/init
       privileged: true
-  - name: ubuntu-18.04
-    driver_config:
-      privileged: true
   - name: ubuntu-16.04
     driver_config:
       privileged: true

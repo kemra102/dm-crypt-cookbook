@@ -15,19 +15,19 @@ def real_name
 end
 
 action :create do
-  if passphrase.nil? && keyfile.nil?
+  if new_resource.passphrase.nil? && new_resource.keyfile.nil?
     Chef::Application.fatal!("You MUST supply either a passphrase or
                              keyfile for #{name}!", 2)
   end
-  if passphrase && keyfile
+  if new_resource.passphrase && new_resource.keyfile
     Chef::Application.fatal!("You MUST supply either a passphrase or
                              keyfile for #{name}, not both!", 3)
   end
 
-  if passphrase
+  if new_resource.passphrase
     ruby_block 'create-device-passphrase' do
       block do
-        DMCrypt::Helper.create_device_passphrase(passphrase, real_device)
+        DMCrypt::Helper.create_device_passphrase(new_resource.passphrase, real_device) # rubocop:disable Metrics/LineLength
       end
       action :run
       not_if { DMCrypt::Helper.encrypted?(real_device) }
@@ -35,7 +35,7 @@ action :create do
   else
     ruby_block 'create-device-keyfile' do
       block do
-        DMCrypt::Helper.create_device_keyfile(keyfile, real_device)
+        DMCrypt::Helper.create_device_keyfile(new_resource.keyfile, real_device)
       end
       action :run
       not_if { DMCrypt::Helper.encrypted?(real_device) }
