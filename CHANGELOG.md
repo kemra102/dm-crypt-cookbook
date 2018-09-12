@@ -1,3 +1,11 @@
+## 2018-09-12
+### Summary
+Updated to support newer Chef & ChefDK versions.
+
+#### Bugfixes
+- Support ChefDK 3+
+- Support Chef 14+
+
 ## 2016-02-15
 ### Summary
 Initial release.
