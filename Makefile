@@ -3,16 +3,16 @@ default : check kitchen
 check : rubocop foodcritic
 
 rubocop :
-	/opt/chefdk/bin/rubocop .
+	/opt/chefdk/embedded/bin/rubocop .
 
 foodcritic :
-	/opt/chefdk/bin/foodcritic -P -f any .
+	/opt/chefdk/embedded/bin/foodcritic -P -f any .
 
 travis : check
 	kitchen verify
 
 kitchen :
-	/opt/chefdk/bin/kitchen test
+	/opt/chefdk/embedded/bin/kitchen test
 
 .PHONY:
 	rubocop foodcritic kitchen

@@ -8,7 +8,7 @@ version '0.1.1'
 
 chef_version '>= 12.5' if respond_to?(:chef_version)
 
-%w(centos oracle redhat scientific).each do |os|
+%w[centos oracle redhat scientific].each do |os|
   supports os, '>= 7.0'
 end
 supports 'ubuntu', '>= 12.04'

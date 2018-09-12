@@ -1,6 +1,5 @@
 resource_name :dmcrypt_device
 
-property :name, String, required: true, name_property: true
 property :device, String, required: false
 property :passphrase, String, required: false
 property :keyfile, String, required: false

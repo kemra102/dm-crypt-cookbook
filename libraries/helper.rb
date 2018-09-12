@@ -17,7 +17,7 @@ module DMCrypt
 
     def self.encrypted?(device)
       shell_out!("[ $(file --dereference --special-files #{device} | cut -d\' \' -f3) == \'encrypted\' ]") # rubocop:disable Metrics/LineLength
-    rescue
+    rescue StandardError
       false
     end
   end
