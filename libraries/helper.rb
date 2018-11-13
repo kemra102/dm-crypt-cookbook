@@ -12,7 +12,7 @@ module DMCrypt
     end
 
     def self.create_device_passphrase(passphrase, device)
-      shell_out!("printf \"%s\\n\" #{passphrase} #{passphrase} | cryptsetup -q luksFormat #{device}") # rubocop:disable Metrics/LineLength
+      shell_out!("cryptsetup luksFormat #{device} -", input: passphrase)
     end
 
     def self.encrypted?(device)
